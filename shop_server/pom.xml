@@ -41,6 +41,18 @@
 	<build>
 		<finalName>shop_server</finalName>
 		<plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <configuration>
+                    <userRealms>
+                        <userRealm implementation="org.mortbay.jetty.security.HashUserRealm">
+                          <name>shoprealm</name>
+                          <config>shoprealm.properties</config>
+                        </userRealm>
+                    </userRealms>
+                </configuration>                    
+            </plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>RELEASE</version>
