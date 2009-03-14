@@ -4,12 +4,21 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/jax-ws/ri/runtime http://java.sun.com/webservices/docs/2.0/jaxws/sun-jaxws.xsd"
     xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
 
+	
     <endpoint 
     	implementation="de.regm.shop.products.ProductsPort"
-        name="Product" 
+        name="Products" 
         url-pattern="/Products"
         wsdl="WEB-INF/wsdl/products.wsdl"
         service="{http://www.regm.de/shop/products}ProductsService"
         port="{http://www.regm.de/shop/products}ProductsPort" />
+	
+    <endpoint 
+    	implementation="de.regm.shop.monitor.MonitorPort"
+        name="Monitor" 
+        url-pattern="/Monitor"
+        wsdl="WEB-INF/wsdl/monitor.wsdl"
+        service="{http://www.regm.de/shop/monitor}MonitorService"
+        port="{http://www.regm.de/shop/monitor}MonitorPort" />	
 
 </endpoints>

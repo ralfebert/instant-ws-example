@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.regm.de/shop/monitor/types"
+	xmlns="http://www.w3.org/2001/XMLSchema" xmlns:monitor="http://www.regm.de/shop/monitor/types">
+	
+	<complexType name="GetServiceCallsCountRequest">
+	</complexType>
+	<element name="GetServiceCallsCountRequest" type="monitor:GetServiceCallsCountRequest" />
+	
+	<complexType name="GetServiceCallsCountResponse">
+		<sequence>
+			<element name="RequestLogs">
+				<complexType>
+					<sequence>
+						<element name="requestLog" type="monitor:RequestLog"
+							maxOccurs="unbounded" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<element name="GetServiceCallsCountResponse" type="monitor:GetServiceCallsCountResponse" />
+	
+	<complexType name="RequestLog">
+		<sequence>
+			<element name="requestName" type="string" />
+			<element name="callCount" type="int" />
+		</sequence>
+	</complexType>
+</schema>
